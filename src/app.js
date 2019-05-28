@@ -5,6 +5,7 @@ const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
 const app = express();
+const port = process.env.PORT || 3000
 
 app.set("view engine", "hbs");
 hbs.registerPartials(path.join(__dirname, "../src/partials"));
@@ -54,6 +55,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
-  console.log("Listen at port 3000...");
+app.listen(port, () => {
+  console.log(`Listen at port ${port}...`);
 });
